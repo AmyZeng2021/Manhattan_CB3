@@ -1,0 +1,5 @@
+git init
+git add .
+git commit -m "first round modeling"
+git remote add origin "git@github.com:AmyZeng2021/Manhattan_CB3.git"
+git push -u origin master
