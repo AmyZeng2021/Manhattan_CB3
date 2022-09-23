@@ -1,4 +1,4 @@
-cd C:\Xumin\Loisaida_Energy
+cd C:\Loisaida_Energy
 
 gcloud builds submit --tag gcr.io/loisaida/energy-emission --project=loisaida
 gcloud config set run/region us-east4
