@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {font-family: Arial;}
+
+/* Style the tab */
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #ccc;
+}
+
+
+/* style for dashboard container */
+.embed-container iframe, .embed-container object, .embed-container embed { 
+	position: absolute;
+	top: 20; 
+	left: 0; 
+	width: 100%; 
+	height: 100%; }
+ 
+</style>
+</head>
+<body onload="document.getElementById('Energy_Avg').click();">
+
+<div class="tab">
+  <button class="tablinks" onclick="openCity(event, 'Energy_Avg')">Average Energy Usage and GHG Emission</button>
+  <button class="tablinks" onclick="openCity(event, 'Energy_Ttl')">Total Energy Usage and GHG Emission</button>
+  <button class="tablinks" onclick="openCity(event, 'Pluto')">Solar and Storm Water Potential</button>
+  <button class="tablinks" onclick="openCity(event, 'TreeBenefit')">Tree Ecological Benefits</button>
+</div>
+
+<div id="Energy_Avg" class='embed-container'>
+
+<iframe 
+	src='https://public.tableau.com/views/Loisaida_Energy_Avg/Dash_Energy?:embed=y&:showVizHome=no&:tabs=no&:toolbar=top&:toolbar=yes' frameborder='0'
+	webkitAllowFullScreen
+	mozallowfullscreen
+	allowFullScreen></iframe>
+</div>
+
+<div id="Energy_Ttl" class="embed-container">
+<iframe 
+	src='https://public.tableau.com/views/LoisaidaEnergeyTotal/Dash_Energyttl?:embed=y&:showVizHome=no&:tabs=no&:toolbar=top&:toolbar=yes' frameborder='0'
+	webkitAllowFullScreen
+	mozallowfullscreen
+	allowFullScreen></iframe>
+</div>
+
+
+<div id="Pluto" class="embed-container">
+<iframe 
+	src='https://public.tableau.com/views/Loisaida_Pluto/Dash_Pluto?:embed=y&:showVizHome=no&:tabs=no&:toolbar=top&:toolbar=yes' frameborder='0'
+	webkitAllowFullScreen
+	mozallowfullscreen
+	allowFullScreen></iframe>
+</div>
+
+<div id="TreeBenefit" class="embed-container">
+<iframe 
+	src='https://public.tableau.com/views/LoisaidaTree_Benefits/Dash_Tree?:embed=y&:showVizHome=no&:tabs=no&:toolbar=top&:toolbar=yes' frameborder='0'
+	webkitAllowFullScreen
+	mozallowfullscreen
+	allowFullScreen></iframe>
+</div>
+
+<script>
+function openCity(evt, cityName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("embed-container");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+</script>
+   
+</body>
+</html> 
